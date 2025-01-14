@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "financial-agent"
+version = "0.1.0"
+description = "A financial agent chatbot for budgeting, loans, and credits."
+authors = ["PalakTolwani <48184637+PalakTolwani@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langchain = "^0.3.13"
+huggingface-hub = "^0.27.0"
+langgraph = "0.2.55"
+prefect = "^3.1.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0"
+black = "^23.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
