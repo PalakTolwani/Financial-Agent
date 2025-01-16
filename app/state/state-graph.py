@@ -1,20 +1,19 @@
-from typing import List
-from pydantic import basemodel
+from typing import List, Dict
+from pydantic import BaseModel
 from typing_extensions import TypedDict
 
 
-class GraphState(TypedDict):
+class BudgetState(TypedDict):
     """
-    Represents the state of our graph.
+    Represents the state of the budgeting workflow.
 
     Attributes:
-        question: question
-        generation: LLM generation
-        documents: list of documents
-        errors: errorrs defined in each stage of the application based on different senarios such llm key, token expire, etc
+        budget: Total budget defined by the user.
+        expenses: A list of expenses with descriptions and amounts.
+        savings: Remaining savings after deducting expenses from the budget.
+        errors: List of error messages encountered during processing.
     """
-
-    question: str
-    generation: str
-    documents: List[str]
-    error: list[str]
+    budget: float
+    expenses: List[Dict[str, float]]  # Each expense has 'description' and 'amount'.
+    savings: float
+    errors: List[str]
