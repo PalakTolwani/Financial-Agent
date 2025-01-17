@@ -1,7 +1,7 @@
 # run or execute the budgeting agent
 
-from nodes.budget_nodes import calculate_budget, calculate_savings
-from states.state_management import validate_state
+from app.nodes.budget_nodes import calculate_budget, calculate_savings
+from states.state_graph import validate_state
 
 class BudgetingAgent:
     def run(self, state):
